@@ -1,0 +1,35 @@
+p {
+    font-size: 1.3rem;
+    line-height: 1.5; 
+}
+
+li {
+    font-size: 1.3rem;
+    line-height: 1.5; 
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+code {
+    font-family: 'Cascadia Mono';
+}
+
+pre {
+    /* TODO: colorschemes */
+    padding: 1rem;
+}
+
+blockquote {
+    position: relative;
+}
+
+blockquote::before {
+    content: "“";
+    position: absolute;
+    font-size: 3rem;
+    left: -1.5rem;
+    top: 0;
+}

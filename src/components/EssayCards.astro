@@ -1,0 +1,63 @@
+---
+type Essay = {
+    id: string;
+    data: {
+        title: string;
+        pubDate: Date;
+        description: string;
+    };
+};
+const { essays } = Astro.props;
+
+const getDate = (date: Date): string => {
+    return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'UTC',
+    });
+};
+---
+<div>
+    {essays.map((essay: Essay) => (
+        <div class="tile">
+            <a href={`/essays/${essay.id}`}>
+                <div class="date">
+                    {getDate(essay.data.pubDate)}
+                </div>
+                <div class="title">
+                    {essay.data.title}
+                </div>
+                <div class="description">
+                    {essay.data.description}
+                </div>
+            </a>
+        </div>
+    ))}
+</div>
+
+<style>
+  .tile {
+    padding-bottom: 2em;
+  }
+  .tile > a {
+    text-decoration: none;
+    line-height: 1.5;
+  }
+  .tile > a:hover .title {
+    text-decoration: underline;
+  }
+  .tile .title {
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .tile .description {
+    font-size: 1.2em;
+    text-decoration: none;
+  }
+  .tile .date {
+    font-size: 0.9em;
+    opacity: 0.7;
+  }
+</style>

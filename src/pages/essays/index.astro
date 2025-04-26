@@ -1,29 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import EssayCards from "../../components/EssayCards.astro";
 import { getCollection } from "astro:content";
 
 const essays = await getCollection("blog");
 ---
 <BaseLayout pageTitle="Essays">
-    <div>
-        {essays.map(essay => (
-            <a href={`/essays/${essay.id}`} class="tile">
-                <div style="font-size: 1.2rem; font-weight: bold;">
-                    {essay.data.title}
-                </div>
-                <div style="color: #666; font-size: 0.95rem;">
-                    {essay.data.description}
-                </div>
-                <div style="font-size: 0.85rem; color: #aaa;">
-                    {essay.data.pubDate.toLocaleDateString()}
-                </div>
-            </a>
-        ))}
-    </div>
+    <EssayCards essays={essays} />
 </BaseLayout>
-
-<style>
-  .tile {
-    margin-bottom: 1.5rem;
-  }
-</style>
