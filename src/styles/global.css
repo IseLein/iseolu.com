@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+:root {
+    --spacing-xs: 1rem;
+    --spacing-sm: 1.5rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --max-width: 54em;
+
+    --bg-light: rgb(255, 252, 240);
+    --bg-dark: rgb(60, 56, 54);
+    --tx-light: rgb(16, 15, 15);
+    --tx-dark: rgb(215,153,33);
+}
+
+html {
+    background-color: var(--bg-light);
+    color: var(--tx-light);
+    font-family: 'Libre Baskerville';
+}
+
+html.dark {
+    background-color: var(--bg-dark);
+    color: var(--tx-dark);
+}
+
+body {
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+    max-width: var(--max-width);
+}
+
+a {
+    color: inherit;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+}
+
+.header {
+    padding: var(--spacing-sm) 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-text {
+    font-size: large;
+    padding: 0 calc(var(--spacing-sm) / 2);
+    text-decoration: none;
+}
+
+.header-text:hover {
+    text-decoration: underline;
+}
+
+.body-text {
+    font-size: x-large;
+    padding: 0 calc(var(--spacing-sm) / 2);
+}
+
+/* Responsive padding adjustments */
+@media (min-width: 768px) {
+    body {
+        padding: 0 var(--spacing-md);
+    }
+    .header {
+        padding: var(--spacing-md) 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        padding: 0 var(--spacing-lg);
+    }
+    .header {
+        padding: var(--spacing-lg) 0;
+    }
+}
