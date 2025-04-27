@@ -1,10 +1,25 @@
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.5; 
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 1.5; 
+}
+
+h3, h4, h5, h6 {
+    font-size: 1.5rem;
+    line-height: 1.5; 
+}
+
 p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     line-height: 1.5; 
 }
 
 li {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     line-height: 1.5; 
 }
 
@@ -15,6 +30,7 @@ img {
 
 code {
     font-family: 'Cascadia Mono';
+    font-size: 1.2rem;
 }
 
 pre {
@@ -29,7 +45,7 @@ blockquote {
 blockquote::before {
     content: "“";
     position: absolute;
-    font-size: 3rem;
+    font-size: 2rem;
     left: -1.5rem;
     top: 0;
 }

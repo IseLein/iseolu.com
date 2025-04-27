@@ -1,8 +1,52 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
+import BaseLayout from "../layouts/BaseLayout.astro";
+import EssayCards from "../components/EssayCards.astro";
+import NameAudio from "../components/NameAudio.astro";
+import { getCollection } from "astro:content";
+
+const essays = await getCollection("blog");
 ---
 <BaseLayout pageTitle="iseolu dot com">
-    <p class="body-text">
-        iseolu
-    </p>
+    <div class="body-text">
+        <p class="name-row">
+            <span>i&middot;se&middot;o&middot;lu / iʃéolú /</span>
+            <span class="small-caps">NOUN (YORUBA)</span>
+            <NameAudio />
+        </p>
+        <p>
+            The work of God. An act of God. A statistical impossibility. Something that happens that
+            makes <em>you</em> think: this can only be God. <em>Iséolúwa lèyí</em>.
+        </p>
+        <p>
+            It's a beautiful name. I love it. My grandparents really cooked with that.
+            I <em>am</em> the work of God, and I hope and pray that He completes His work in me.
+        </p>
+        <p>
+            The word <span style="font-weight: bold;">essay</span> derives from the french <em>essayer</em>:
+            to try, to attempt, to make an experimental effort. This is my attempt at essaying.
+        </p>
+        <p>
+            I am a programmer at heart, I love robots, and I like thinking thoughts.
+        </p>
+    </div>
+    <div class="title-text">
+        RECENT ESSAYS
+    </div>
+    <EssayCards essays={essays.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()).slice(0, 4)} />
 </BaseLayout>
+
+<style>
+    .title-text {
+        padding-top: 0.5em;
+        padding-bottom: 0.2em;
+        margin-bottom: 1em;
+        font-size: 2em;
+        border-bottom: 1px solid;
+    }
+    .name-row {
+        display: flex;
+        align-items: center;
+        justify-items: start;
+        gap: 10px;
+    }
+</style>

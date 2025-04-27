@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&display=swap');
 :root {
     --spacing-xs: 1rem;
@@ -16,7 +17,7 @@
 html {
     background-color: var(--bg-light);
     color: var(--fg-light);
-    font-family: 'Libre Baskerville';
+    font-family: 'Crimson Pro';
 }
 
 html.dark {
@@ -47,7 +48,7 @@ a {
 }
 
 .header-text {
-    font-size: large;
+    font-size: 1.5em;
     padding: 0 calc(var(--spacing-sm) / 2);
     text-decoration: none;
 }
@@ -58,7 +59,10 @@ a {
 
 .body-text {
     font-size: x-large;
-    padding: 0 calc(var(--spacing-sm) / 2);
+}
+
+.small-caps {
+    font-variant-caps: all-small-caps;
 }
 
 /* Responsive padding adjustments */

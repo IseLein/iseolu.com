@@ -7,7 +7,7 @@ type Essay = {
         description: string;
     };
 };
-const { essays } = Astro.props;
+const essays = Astro.props.essays as Essay[];
 
 const getDate = (date: Date): string => {
     return date.toLocaleDateString('en-US', {
@@ -19,7 +19,8 @@ const getDate = (date: Date): string => {
 };
 ---
 <div>
-    {essays.map((essay: Essay) => (
+    {essays.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+        .map(essay => (
         <div class="tile">
             <a href={`/essays/${essay.id}`}>
                 <div class="date">
@@ -53,11 +54,11 @@ const getDate = (date: Date): string => {
     text-decoration: none;
   }
   .tile .description {
-    font-size: 1.2em;
+    font-size: 1.3em;
     text-decoration: none;
   }
   .tile .date {
-    font-size: 0.9em;
+    font-size: 1em;
     opacity: 0.7;
   }
 </style>
