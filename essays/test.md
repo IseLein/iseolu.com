@@ -9,10 +9,8 @@ image:
 tags: ["markdown", "tutorial", "web development"]
 ---
 
-# Trying to run for presidency at UTM Robotics.
-
 So... I lost. Whew. I saw this coming, but it's fine. I'm not really interested in
-introspecting. I just want to test this. Here's a [link](https://stephango.com/about). Does
+introspecting. I just want to test this. Here's a [link](https://www.google.com/). Does
 that look good?
 
 Here's an image
