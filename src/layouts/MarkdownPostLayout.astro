@@ -4,6 +4,6 @@ import "../styles/markdown.css";
 
 const { frontmatter } = Astro.props;
 ---
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout pageTitle={frontmatter.title} image={frontmatter.image.url} description={frontmatter.description}>
     <slot />
 </BaseLayout>
