@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import EssayCards from "../components/EssayCards.astro";
 import NameAudio from "../components/NameAudio.astro";
+import Tags from "../components/Tags.astro";
 import { getCollection } from "astro:content";
 
 const essays = await getCollection("blog");
@@ -35,20 +36,24 @@ const essays = await getCollection("blog");
         RECENT ESSAYS
     </div>
     <EssayCards essays={essays.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()).slice(0, 4)} />
+    <div class="more">
+        <a href="/essays"> archive&raquo; </a>
+    </div>
+    <div class="title-text">
+        TOPICS
+    </div>
+    <Tags />
 </BaseLayout>
 
 <style>
-    .title-text {
-        padding-top: 0.5em;
-        padding-bottom: 0.2em;
-        margin-bottom: 1em;
-        font-size: 2em;
-        border-bottom: 1px solid;
-    }
     .name-row {
         display: flex;
         align-items: center;
         justify-items: start;
         gap: 10px;
+    }
+    .more {
+        font-size: x-large;
+        text-align: right;
     }
 </style>

@@ -6,7 +6,7 @@ author: 'Iseolu'
 image:
     url: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa'
     alt: 'A beautiful space image showing galaxies and stars'
-tags: ["markdown", "tutorial", "webdev", "llms", "thoughts", "robotics", "ai"]
+tags: ["programming", "tutorial", "webdev", "llms", "thoughts", "robotics", "ai"]
 ---
 
 So... I lost. Whew. I saw this coming, but it's fine. I'm not really interested in

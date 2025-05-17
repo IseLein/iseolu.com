@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import MarkdownPostLayout from "../../layouts/MarkdownPostLayout.astro";
+import Tags from "../../components/Tags.astro";
 
 export async function getStaticPaths() {
     const posts = await getCollection("blog");
@@ -23,6 +24,15 @@ const { Content } = await render(post);
             day: 'numeric',
             timeZone: 'UTC',
         })}
+    </div>
+    <div style="margin-bottom: 1.5em;">
+        {post.data.tags && post.data.tags.length > 0 && (
+            <div>
+                <div style="margin-top: 0.5em;">
+                    <Tags tags={post.data.tags} />
+                </div>
+            </div>
+        )}
     </div>
     <Content />
 </MarkdownPostLayout>

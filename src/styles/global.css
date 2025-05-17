@@ -57,6 +57,14 @@ a {
     text-decoration: underline;
 }
 
+.title-text {
+    padding-top: 0.5em;
+    padding-bottom: 0.2em;
+    margin-bottom: 1em;
+    font-size: 2em;
+    border-bottom: 1px solid;
+}
+
 .body-text {
     font-size: x-large;
 }
