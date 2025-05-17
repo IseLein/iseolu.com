@@ -1,7 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
 import MarkdownPostLayout from "../../layouts/MarkdownPostLayout.astro";
-import Tags from "../../components/Tags.astro";
 
 export async function getStaticPaths() {
     const posts = await getCollection("blog");
@@ -16,7 +15,14 @@ const { Content } = await render(post);
 ---
 
 <MarkdownPostLayout frontmatter={post.data}>
-    <h1 style="margin-bottom: 0.2em;">{post.data.title}</h1>
+    <div style="margin-bottom: 0.5em;">
+        {post.data.tags && post.data.tags.length > 0 && (
+            post.data.tags.map((tag) => (
+                <a href={`/tags/${tag}`} style="margin-right: 0.5em; font-size: larger;">{tag}</a>
+            ))
+        )}
+    </div>
+    <h1 style="margin-bottom: 0.2em; margin-top: 0.2em;">{post.data.title}</h1>
     <div style="font-size: 1.3em; opacity: 0.7;">
         {post.data.pubDate.toLocaleDateString('en-US', {
             year: 'numeric',
@@ -24,15 +30,6 @@ const { Content } = await render(post);
             day: 'numeric',
             timeZone: 'UTC',
         })}
-    </div>
-    <div style="margin-bottom: 1.5em;">
-        {post.data.tags && post.data.tags.length > 0 && (
-            <div>
-                <div style="margin-top: 0.5em;">
-                    <Tags tags={post.data.tags} />
-                </div>
-            </div>
-        )}
     </div>
     <Content />
 </MarkdownPostLayout>
