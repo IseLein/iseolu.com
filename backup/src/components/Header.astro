@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets"
+import ThemeIcon from "./ThemeIcon.astro"
+
+import logo from "../images/iseolu.png"
+---
+
+<div class="header">
+    <a href="/">
+        <Image class="logo" src={logo} alt="Iseolu Logo" loading="lazy"/>
+    </a>
+    <div style="display: flex; align-items: center;">
+        <a class="header-text" href="/essays" style=":hover: text-decoration: underline;">ESSAYS</a>
+        <ThemeIcon />
+    </div>
+</div>
