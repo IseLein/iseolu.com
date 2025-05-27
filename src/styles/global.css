@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import './flexoki.css';
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
@@ -52,35 +53,35 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --background: var(--flexoki-paper);
+  --foreground: var(--flexoki-black);
+  --primary: var(--flexoki-900);
+  --primary-foreground: var(--flexoki-50);
+  --secondary: var(--flexoki-100);
+  --secondary-foreground: var(--flexoki-900);
+  --muted: var(--flexoki-150);
+  --muted-foreground: var(--flexoki-600);
+  --accent: var(--flexoki-blue-500);
+  --accent-foreground: var(--flexoki-blue-50);
+  --destructive: var(--flexoki-red-600);
+  --border: var(--flexoki-200);
+  --ring: var(--flexoki-400);
 }
 
 [data-theme="dark"] {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --ring: oklch(0.556 0 0);
+  --background: var(--flexoki-black);
+  --foreground: var(--flexoki-paper);
+  --primary: var(--flexoki-100);
+  --primary-foreground: var(--flexoki-900);
+  --secondary: var(--flexoki-850);
+  --secondary-foreground: var(--flexoki-100);
+  --muted: var(--flexoki-800);
+  --muted-foreground: var(--flexoki-400);
+  --accent: var(--flexoki-blue-400);
+  --accent-foreground: var(--flexoki-blue-950);
+  --destructive: var(--flexoki-red-400);
+  --border: var(--flexoki-800);
+  --ring: var(--flexoki-600);
 }
 
 @layer base {
