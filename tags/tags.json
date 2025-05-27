@@ -1,34 +1,14 @@
 [
   {
-    "id": "programming",
-    "description": "because you should be listening to me"
+    "id": "essay",
+    "description": "redundant, but i like"
   },
   {
-    "id": "markdown",
-    "description": "because you should be listening to me"
+    "id": "nigeria",
+    "description": "my beloved country"
   },
   {
-    "id": "webdev",
-    "description": "because you should be listening to me"
-  },
-  {
-    "id": "llms",
-    "description": "because you should be listening to me"
-  },
-  {
-    "id": "thoughts",
-    "description": "because you should be listening to me"
-  },
-  {
-    "id": "robotics",
-    "description": "because you should be listening to me"
-  },
-  {
-    "id": "ai",
-    "description": "because you should be listening to me"
-  },
-  {
-    "id": "tutorial",
-    "description": "because you should be listening to me"
+    "id": "electricity",
+    "description": "let there be light, innit"
   }
 ]

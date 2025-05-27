@@ -36,7 +36,7 @@ const essays = await getCollection("blog");
         RECENT ESSAYS
     </div>
     <EssayCards essays={essays.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()).slice(0, 4)} />
-    <div class="more">
+    <div class="more body-text">
         <a href="/essays"> archive&raquo; </a>
     </div>
     <div class="title-text">
@@ -53,7 +53,6 @@ const essays = await getCollection("blog");
         gap: 10px;
     }
     .more {
-        font-size: x-large;
         text-align: right;
     }
 </style>

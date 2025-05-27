@@ -22,7 +22,7 @@ const sortedTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]);
 
 <style>
     .tag {
-        font-size: x-large;
+        font-size: 1.2em;
         display: flex;
         justify-content: space-between;
         gap: 1em;
@@ -31,5 +31,10 @@ const sortedTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]);
 
     .tag span {
         text-align: right;
+    }
+    @media (min-width: 768px) {
+        .tag {
+            font-size: 1.5em;
+        }
     }
 </style>

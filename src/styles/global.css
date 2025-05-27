@@ -8,21 +8,27 @@
     --spacing-lg: 3rem;
     --max-width: 54em;
 
-    --bg-light: rgb(251, 241, 199);
-    --bg-dark: rgb(40, 40, 40);
-    --fg-light: rgb(40, 40, 40);
-    --fg-dark: rgb(251, 241, 199);
+    --bg: rgb(251, 241, 199);
+    --fg: rgb(40, 40, 40);
+}
+
+::selection {
+    background: var(--fg);
+    color: var(--bg);
 }
 
 html {
-    background-color: var(--bg-light);
-    color: var(--fg-light);
+    background-color: var(--bg);
+    color: var(--fg);
     font-family: 'Crimson Pro';
 }
 
 html.dark {
-    background-color: var(--bg-dark);
-    color: var(--fg-dark);
+    --bg: rgb(40, 40, 40);
+    --fg: rgb(251, 241, 199);
+
+    background-color: var(--bg);
+    color: var(--fg);
 }
 
 body {
@@ -61,25 +67,30 @@ a {
     padding-top: 0.5em;
     padding-bottom: 0.2em;
     margin-bottom: 1em;
-    font-size: 2em;
+    font-size: 1.6em;
     border-bottom: 1px solid;
 }
 
 .body-text {
-    font-size: x-large;
+    font-size: 1.2em;
 }
 
 .small-caps {
     font-variant-caps: all-small-caps;
 }
 
-/* Responsive padding adjustments */
 @media (min-width: 768px) {
     body {
         padding: 0 var(--spacing-md);
     }
     .header {
         padding: var(--spacing-md) 0;
+    }
+    .body-text {
+        font-size: 1.5em;
+    }
+    .title-text {
+        font-size: 2em;
     }
 }
 

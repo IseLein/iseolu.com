@@ -43,22 +43,30 @@ const getDate = (date: Date): string => {
   }
   .tile > a {
     text-decoration: none;
-    line-height: 1.5;
   }
   .tile > a:hover .title {
     text-decoration: underline;
   }
   .tile .title {
-    font-size: 2em;
+    font-size: 1.6em;
     font-weight: bold;
     text-decoration: none;
+    padding-bottom: 0.2em;
   }
   .tile .description {
-    font-size: 1.3em;
+    font-size: 1.2em;
     text-decoration: none;
   }
   .tile .date {
     font-size: 1em;
     opacity: 0.7;
+  }
+  @media (min-width: 768px) {
+    .tile .title {
+      font-size: 2em;
+    }
+    .tile .description {
+      font-size: 1.5em;
+    }
   }
 </style>
