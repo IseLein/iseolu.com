@@ -88,4 +88,9 @@
   .prose p {
     @apply text-xl;
   }
+
+  ::selection {
+    background-color: var(--secondary-foreground);
+    color: var(--secondary);
+  }
 }
