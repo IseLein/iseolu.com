@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 @import 'tailwindcss';
-@import './flexoki.css';
+@import './gruvbox.css';
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
@@ -45,35 +45,35 @@
 }
 
 :root {
-  --background: var(--flexoki-paper);
-  --foreground: var(--flexoki-black);
-  --primary: var(--flexoki-900);
-  --primary-foreground: var(--flexoki-50);
-  --secondary: var(--flexoki-100);
-  --secondary-foreground: var(--flexoki-900);
-  --muted: var(--flexoki-150);
-  --muted-foreground: var(--flexoki-600);
-  --accent: var(--flexoki-blue-500);
-  --accent-foreground: var(--flexoki-blue-50);
-  --destructive: var(--flexoki-red-600);
-  --border: var(--flexoki-200);
-  --ring: var(--flexoki-400);
+  --background: var(--gruvbox-light0);
+  --foreground: var(--gruvbox-dark0);
+  --primary: var(--gruvbox-dark2);
+  --primary-foreground: var(--gruvbox-light0);
+  --secondary: var(--gruvbox-light1);
+  --secondary-foreground: var(--gruvbox-dark1);
+  --muted: var(--gruvbox-light2);
+  --muted-foreground: var(--gruvbox-dark3);
+  --accent: var(--gruvbox-bright-blue);
+  --accent-foreground: var(--gruvbox-light0);
+  --destructive: var(--gruvbox-neutral-red);
+  --border: var(--gruvbox-light3);
+  --ring: var(--gruvbox-gray);
 }
 
 [data-theme="dark"] {
-  --background: var(--flexoki-black);
-  --foreground: var(--flexoki-paper);
-  --primary: var(--flexoki-100);
-  --primary-foreground: var(--flexoki-900);
-  --secondary: var(--flexoki-850);
-  --secondary-foreground: var(--flexoki-100);
-  --muted: var(--flexoki-800);
-  --muted-foreground: var(--flexoki-400);
-  --accent: var(--flexoki-blue-400);
-  --accent-foreground: var(--flexoki-blue-950);
-  --destructive: var(--flexoki-red-400);
-  --border: var(--flexoki-800);
-  --ring: var(--flexoki-600);
+  --background: var(--gruvbox-dark0);
+  --foreground: var(--gruvbox-light0);
+  --primary: var(--gruvbox-light2);
+  --primary-foreground: var(--gruvbox-dark0);
+  --secondary: var(--gruvbox-dark1);
+  --secondary-foreground: var(--gruvbox-light1);
+  --muted: var(--gruvbox-dark2);
+  --muted-foreground: var(--gruvbox-light4);
+  --accent: var(--gruvbox-bright-blue);
+  --accent-foreground: var(--gruvbox-dark0);
+  --destructive: var(--gruvbox-bright-red);
+  --border: var(--gruvbox-dark3);
+  --ring: var(--gruvbox-gray);
 }
 
 @layer base {
