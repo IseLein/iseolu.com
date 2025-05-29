@@ -84,4 +84,8 @@
   ::file-selector-button {
     @apply border-border outline-ring/50 tracking-tight;
   }
+
+  .prose p {
+    @apply text-xl;
+  }
 }

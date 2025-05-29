@@ -55,9 +55,9 @@ const subpostsWithReadingTime = await Promise.all(
                     aria-hidden="true"
                   />
                   <div class="flex flex-col">
-                    <span class="line-clamp-2">{activePost.data.title}</span>
+                    <span class="line-clamp-2 text-base">{activePost.data.title}</span>
                     {activePostReadingTime && (
-                      <span class="text-muted-foreground/80 text-xs">
+                      <span class="text-muted-foreground/80 text-sm">
                         {activePostReadingTime}
                       </span>
                     )}
@@ -74,9 +74,9 @@ const subpostsWithReadingTime = await Promise.all(
                     aria-hidden="true"
                   />
                   <div class="flex flex-col">
-                    <span class="line-clamp-2">{activePost.data.title}</span>
+                    <span class="line-clamp-2 text-base">{activePost.data.title}</span>
                     {activePostReadingTime && (
-                      <span class="text-muted-foreground/80 text-xs">
+                      <span class="text-muted-foreground/80 text-sm">
                         {activePostReadingTime}
                       </span>
                     )}
@@ -99,8 +99,8 @@ const subpostsWithReadingTime = await Promise.all(
                       aria-hidden="true"
                     />
                     <div class="flex flex-col">
-                      <span class="line-clamp-2">{subpost.data.title}</span>
-                      <span class="text-muted-foreground/80 text-xs">
+                      <span class="line-clamp-2 text-base">{subpost.data.title}</span>
+                      <span class="text-muted-foreground/80 text-sm">
                         {subpost.readingTime}
                       </span>
                     </div>
@@ -116,8 +116,8 @@ const subpostsWithReadingTime = await Promise.all(
                       aria-hidden="true"
                     />
                     <div class="flex flex-col">
-                      <span class="line-clamp-2">{subpost.data.title}</span>
-                      <span class="text-muted-foreground/80 text-xs">
+                      <span class="line-clamp-2 text-base">{subpost.data.title}</span>
+                      <span class="text-muted-foreground/80 text-sm">
                         {subpost.readingTime}
                       </span>
                     </div>

@@ -22,12 +22,12 @@ const { headings } = Astro.props
       class="mr-8 flex list-none flex-col gap-y-2 px-4"
       id="table-of-contents"
     >
-      <li class="text-lg font-medium">Table of Contents</li>
+      <li class="text-xl font-medium">Table of Contents</li>
       {
         headings.map((heading) => (
           <li
             class={cn(
-              'text-foreground/60 text-sm',
+              'text-foreground/60 text-base',
               getHeadingMargin(heading.depth),
             )}
           >

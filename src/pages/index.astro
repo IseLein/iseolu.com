@@ -2,6 +2,7 @@
 import BlogCard from '@/components/BlogCard.astro'
 import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
+import NameAudio from '@/components/NameAudio.astro'
 import { buttonVariants } from '@/components/ui/button'
 import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
@@ -12,57 +13,32 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
 
 <Layout>
   <PageHead slot="head" title="Home" />
-  <section>
-    <div class="rounded-lg border">
-      <div class="flex flex-col space-y-1.5 p-6">
-        <h3 class="text-3xl leading-none font-medium">er·u·dite</h3>
-        <p class="text-muted-foreground text-sm">
-          /ˈer(y)əˌdīt/ &bull; <span class="font-medium">adjective</span>
-        </p>
-      </div>
-      <div class="p-6 pt-0">
-        <p class="text-muted-foreground mb-2 text-sm">
-          astro-erudite is an opinionated, unstyled static blogging template
-          built with <Link
-            href="https://astro.build"
-            class="text-foreground"
-            external
-            underline>Astro</Link
-          >, <Link
-            href="https://tailwindcss.com"
-            class="text-foreground"
-            external
-            underline>Tailwind</Link
-          >, and <Link
-            href="https://ui.shadcn.com"
-            class="text-foreground"
-            external
-            underline>shadcn/ui</Link
-          >. Extraordinarily loosely based on the <Link
-            href="https://astro-micro.vercel.app/"
-            class="text-foreground"
-            external
-            underline>Astro Micro</Link
-          > theme.
-        </p>
-        <p class="text-muted-foreground text-sm">
-          To use this template, check out the <Link
-            href="https://github.com/jktrn/astro-erudite"
-            class="text-foreground"
-            underline
-            external>GitHub</Link
-          > repository. To learn more about why this template exists, read this blog
-          post: <Link
-            href="/blog/the-state-of-static-blogs"
-            class="text-foreground"
-            underline>The State of Static Blogs in 2024</Link
-          >.
-        </p>
-      </div>
-    </div>
+  <section class="text-xl">
+    <p class="py-4 flex justify-start items-center gap-3">
+      <span>i&middot;se&middot;o&middot;lu / iʃéolú /</span>
+      <span class="text-base">NOUN (YORUBA)</span>
+      <NameAudio />
+    </p>
+    <p>
+      The work of God. An act of God. A statistical impossibility. Something that happens that
+      makes <em>you</em> think: this can only be God. <em>Iséolúwa lèyí</em>.
+    </p>
+    <p>
+      It's a beautiful name. I love it. My grandparents really cooked with that.
+      I <em>am</em> the work of God, and I hope and pray that He completes His work in me.
+    </p>
+    <p>
+      The word <span style="font-weight: bold;">essay</span> derives from the french <em>essayer</em>:
+      to try, to attempt, to make an experimental effort. This is my attempt at essaying.
+    </p>
+    <p>
+      I am a programmer at heart, I love robots, and I like thinking thoughts and asking dumb questions.
+      Why is electricity so terrible in Nigeria? What do medical lab scientists even do? If you have answers,
+      please let me know.
+    </p>
   </section>
   <section class="flex flex-col gap-y-4">
-    <h2 class="text-2xl font-medium">Latest posts</h2>
+    <h2 class="text-2xl text-2xl font-medium">Recent Essays</h2>
     <ul class="flex flex-col gap-y-4">
       {
         blog.map((post) => (

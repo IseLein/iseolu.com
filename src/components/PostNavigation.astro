@@ -28,10 +28,10 @@ const isSubpost = !!parentPost
       class="mr-2 size-4 transition-transform group-hover:-translate-x-1"
     />
     <div class="flex flex-col items-start overflow-hidden text-wrap">
-      <span class="text-muted-foreground text-left text-xs">
+      <span class="text-muted-foreground text-left text-sm">
         {isSubpost ? 'Previous Subpost' : 'Previous Post'}
       </span>
-      <span class="w-full text-left text-sm text-balance text-ellipsis">
+      <span class="w-full text-left text-base text-balance text-ellipsis">
         {
           olderPost?.data.title ||
             (isSubpost ? 'No older subpost' : "You're at the oldest post!")
@@ -58,7 +58,7 @@ const isSubpost = !!parentPost
           <span class="text-muted-foreground text-center text-xs">
             Parent Post
           </span>
-          <span class="w-full text-center text-sm text-balance text-ellipsis">
+          <span class="w-full text-center text-base text-balance text-ellipsis">
             {parentPost?.data.title || 'No parent post'}
           </span>
         </div>
@@ -76,10 +76,10 @@ const isSubpost = !!parentPost
     aria-disabled={!newerPost}
   >
     <div class="flex flex-col items-end overflow-hidden text-wrap">
-      <span class="text-muted-foreground text-right text-xs">
+      <span class="text-muted-foreground text-right text-sm">
         {isSubpost ? 'Next Subpost' : 'Next Post'}
       </span>
-      <span class="w-full text-right text-sm text-balance text-ellipsis">
+      <span class="w-full text-right text-base text-balance text-ellipsis">
         {
           newerPost?.data.title ||
             (isSubpost ? 'No newer subpost' : "You're at the newest post!")
