@@ -1,104 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&display=swap');
+@import 'tailwindcss';
+@import './gruvbox.css';
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme inline {
+  --font-sans:
+    'Crimson Pro', ui-serif, Georgia, Cambria, Times, serif;
+  --font-mono:
+    Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-additive: var(--additive);
+  --color-additive-foreground: var(--additive-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts/GeistMonoVF.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-    --spacing-xs: 1rem;
-    --spacing-sm: 1.5rem;
-    --spacing-md: 2rem;
-    --spacing-lg: 3rem;
-    --max-width: 54em;
-
-    --bg: rgb(251, 241, 199);
-    --fg: rgb(40, 40, 40);
+  --background: var(--gruvbox-light0);
+  --foreground: var(--gruvbox-dark0);
+  --primary: var(--gruvbox-dark2);
+  --primary-foreground: var(--gruvbox-light0);
+  --secondary: var(--gruvbox-light1);
+  --secondary-foreground: var(--gruvbox-dark1);
+  --muted: var(--gruvbox-light2);
+  --muted-foreground: var(--gruvbox-dark3);
+  --accent: var(--gruvbox-bright-blue);
+  --accent-foreground: var(--gruvbox-light0);
+  --destructive: var(--gruvbox-neutral-red);
+  --border: var(--gruvbox-light3);
+  --ring: var(--gruvbox-gray);
 }
 
-::selection {
-    background: var(--fg);
-    color: var(--bg);
+[data-theme="dark"] {
+  --background: var(--gruvbox-dark0);
+  --foreground: var(--gruvbox-light0);
+  --primary: var(--gruvbox-light2);
+  --primary-foreground: var(--gruvbox-dark0);
+  --secondary: var(--gruvbox-dark1);
+  --secondary-foreground: var(--gruvbox-light1);
+  --muted: var(--gruvbox-dark2);
+  --muted-foreground: var(--gruvbox-light4);
+  --accent: var(--gruvbox-bright-blue);
+  --accent-foreground: var(--gruvbox-dark0);
+  --destructive: var(--gruvbox-bright-red);
+  --border: var(--gruvbox-dark3);
+  --ring: var(--gruvbox-gray);
 }
 
-html {
-    background-color: var(--bg);
-    color: var(--fg);
-    font-family: 'Crimson Pro';
-}
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    @apply border-border outline-ring/50 tracking-tight;
+  }
 
-html.dark {
-    --bg: rgb(40, 40, 40);
-    --fg: rgb(251, 241, 199);
+  .prose p {
+    @apply text-xl;
+  }
 
-    background-color: var(--bg);
-    color: var(--fg);
-}
-
-body {
-    margin: 0 auto;
-    padding: 0 var(--spacing-sm);
-    max-width: var(--max-width);
-}
-
-a {
-    color: inherit;
-}
-
-.logo {
-    max-width: 100px;
-    height: auto;
-}
-
-.header {
-    padding: var(--spacing-sm) 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.header-text {
-    font-size: 1.5em;
-    padding: 0 calc(var(--spacing-sm) / 2);
-    text-decoration: none;
-}
-
-.header-text:hover {
-    text-decoration: underline;
-}
-
-.title-text {
-    padding-top: 0.5em;
-    padding-bottom: 0.2em;
-    margin-bottom: 1em;
-    font-size: 1.6em;
-    border-bottom: 1px solid;
-}
-
-.body-text {
-    font-size: 1.2em;
-}
-
-.small-caps {
-    font-variant-caps: all-small-caps;
-}
-
-@media (min-width: 768px) {
-    body {
-        padding: 0 var(--spacing-md);
-    }
-    .header {
-        padding: var(--spacing-md) 0;
-    }
-    .body-text {
-        font-size: 1.5em;
-    }
-    .title-text {
-        font-size: 2em;
-    }
-}
-
-@media (min-width: 1024px) {
-    body {
-        padding: 0 var(--spacing-lg);
-    }
-    .header {
-        padding: var(--spacing-lg) 0;
-    }
+  ::selection {
+    background-color: var(--secondary-foreground);
+    color: var(--secondary);
+  }
 }

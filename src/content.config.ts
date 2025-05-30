@@ -1,27 +1,17 @@
-import { file, glob } from "astro/loaders";
-import { z, defineCollection } from "astro:content";
+import { glob } from 'astro/loaders'
+import { defineCollection, z } from 'astro:content'
 
 const blog = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.md", base: "./essays" }),
-  schema: z.object({
-    title: z.string(),
-    pubDate: z.date(),
-    description: z.string(),
-    author: z.string(),
-    image: z.object({
-      url: z.string(),
-      alt: z.string(),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      date: z.coerce.date(),
+      image: image().optional(),
+      tags: z.array(z.string()).optional(),
+      draft: z.boolean().optional(),
     }),
-    tags: z.array(z.string()),
-  }),
-});
+})
 
-const tags = defineCollection({
-  loader: file("./tags/tags.json"),
-  schema: z.object({
-    id: z.string(),
-    description: z.string(),
-  }),
-});
-
-export const collections = { blog, tags };
+export const collections = { blog }
